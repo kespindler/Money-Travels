@@ -13,6 +13,24 @@
 		45804C9514C07FAF005D911D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45804C9314C07FAF005D911D /* InfoPlist.strings */; };
 		45804C9714C07FAF005D911D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45804C9614C07FAF005D911D /* main.m */; };
 		45804C9B14C07FAF005D911D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45804C9A14C07FAF005D911D /* AppDelegate.m */; };
+		45C7DE4214C0802C00B47884 /* EnterDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C7DE4014C0802C00B47884 /* EnterDataViewController.m */; };
+		45C7DE4314C0802C00B47884 /* EnterDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45C7DE4114C0802C00B47884 /* EnterDataViewController.xib */; };
+		45C7DE4814C08AD000B47884 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C7DE4614C08AD000B47884 /* SettingsViewController.m */; };
+		45C7DE4914C08AD000B47884 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45C7DE4714C08AD000B47884 /* SettingsViewController.xib */; };
+		45E7A0BE14C08CB7008985C5 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E7A0BC14C08CB7008985C5 /* HistoryViewController.m */; };
+		45E7A0BF14C08CB7008985C5 /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45E7A0BD14C08CB7008985C5 /* HistoryViewController.xib */; };
+		45E7A0C314C08CD2008985C5 /* TotalsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E7A0C114C08CD2008985C5 /* TotalsViewController.m */; };
+		45E7A0C414C08CD2008985C5 /* TotalsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45E7A0C214C08CD2008985C5 /* TotalsViewController.xib */; };
+		45E7A0C814C08CE1008985C5 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E7A0C614C08CE1008985C5 /* HelpViewController.m */; };
+		45E7A0C914C08CE1008985C5 /* HelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45E7A0C714C08CE1008985C5 /* HelpViewController.xib */; };
+		45E7A28014C0953D008985C5 /* icn_tabbaradd.png in Resources */ = {isa = PBXBuildFile; fileRef = 45E7A1B414C0953D008985C5 /* icn_tabbaradd.png */; };
+		45E7A28114C0953D008985C5 /* icn_tabbarhelp.png in Resources */ = {isa = PBXBuildFile; fileRef = 45E7A1B514C0953D008985C5 /* icn_tabbarhelp.png */; };
+		45E7A28214C0953D008985C5 /* icn_tabbarhistory.png in Resources */ = {isa = PBXBuildFile; fileRef = 45E7A1B614C0953D008985C5 /* icn_tabbarhistory.png */; };
+		45E7A28314C0953D008985C5 /* icn_tabbarsettings.png in Resources */ = {isa = PBXBuildFile; fileRef = 45E7A1B714C0953D008985C5 /* icn_tabbarsettings.png */; };
+		45E7A28414C0953D008985C5 /* icn_tabbartotals.png in Resources */ = {isa = PBXBuildFile; fileRef = 45E7A1B814C0953D008985C5 /* icn_tabbartotals.png */; };
+		45E7A28714C09696008985C5 /* PersonObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E7A28614C09696008985C5 /* PersonObject.m */; };
+		45E7A28B14C09970008985C5 /* NewPersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E7A28914C0996F008985C5 /* NewPersonViewController.m */; };
+		45E7A28C14C09970008985C5 /* NewPersonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45E7A28A14C0996F008985C5 /* NewPersonViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +38,37 @@
 		45804C8A14C07FAF005D911D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		45804C8C14C07FAF005D911D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		45804C8E14C07FAF005D911D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		45804C9214C07FAF005D911D /* Money Travels-Info.plist */ = {isa = PBXFileReference; path = "Money Travels-Info.plist"; sourceTree = "<group>"; };
+		45804C9214C07FAF005D911D /* Money Travels-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Money Travels-Info.plist"; sourceTree = "<group>"; };
 		45804C9414C07FAF005D911D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		45804C9614C07FAF005D911D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		45804C9814C07FAF005D911D /* Money Travels-Prefix.pch */ = {isa = PBXFileReference; path = "Money Travels-Prefix.pch"; sourceTree = "<group>"; };
-		45804C9914C07FAF005D911D /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		45804C9814C07FAF005D911D /* Money Travels-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Money Travels-Prefix.pch"; sourceTree = "<group>"; };
+		45804C9914C07FAF005D911D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		45804C9A14C07FAF005D911D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		45C7DE3F14C0802C00B47884 /* EnterDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnterDataViewController.h; sourceTree = "<group>"; };
+		45C7DE4014C0802C00B47884 /* EnterDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnterDataViewController.m; sourceTree = "<group>"; };
+		45C7DE4114C0802C00B47884 /* EnterDataViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EnterDataViewController.xib; sourceTree = "<group>"; };
+		45C7DE4514C08AD000B47884 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		45C7DE4614C08AD000B47884 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		45C7DE4714C08AD000B47884 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		45E7A0BB14C08CB7008985C5 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
+		45E7A0BC14C08CB7008985C5 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
+		45E7A0BD14C08CB7008985C5 /* HistoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
+		45E7A0C014C08CD2008985C5 /* TotalsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TotalsViewController.h; sourceTree = "<group>"; };
+		45E7A0C114C08CD2008985C5 /* TotalsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TotalsViewController.m; sourceTree = "<group>"; };
+		45E7A0C214C08CD2008985C5 /* TotalsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TotalsViewController.xib; sourceTree = "<group>"; };
+		45E7A0C514C08CE1008985C5 /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
+		45E7A0C614C08CE1008985C5 /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
+		45E7A0C714C08CE1008985C5 /* HelpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HelpViewController.xib; sourceTree = "<group>"; };
+		45E7A1B414C0953D008985C5 /* icn_tabbaradd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icn_tabbaradd.png; sourceTree = "<group>"; };
+		45E7A1B514C0953D008985C5 /* icn_tabbarhelp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icn_tabbarhelp.png; sourceTree = "<group>"; };
+		45E7A1B614C0953D008985C5 /* icn_tabbarhistory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icn_tabbarhistory.png; sourceTree = "<group>"; };
+		45E7A1B714C0953D008985C5 /* icn_tabbarsettings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icn_tabbarsettings.png; sourceTree = "<group>"; };
+		45E7A1B814C0953D008985C5 /* icn_tabbartotals.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icn_tabbartotals.png; sourceTree = "<group>"; };
+		45E7A28514C09695008985C5 /* PersonObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonObject.h; sourceTree = "<group>"; };
+		45E7A28614C09696008985C5 /* PersonObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonObject.m; sourceTree = "<group>"; };
+		45E7A28814C0996F008985C5 /* NewPersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPersonViewController.h; sourceTree = "<group>"; };
+		45E7A28914C0996F008985C5 /* NewPersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPersonViewController.m; sourceTree = "<group>"; };
+		45E7A28A14C0996F008985C5 /* NewPersonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewPersonViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				45804C9014C07FAF005D911D /* Money Travels */,
+				45E7A0EA14C0953D008985C5 /* Resources */,
 				45804C8914C07FAF005D911D /* Frameworks */,
 				45804C8714C07FAF005D911D /* Products */,
 			);
@@ -75,6 +119,26 @@
 				45804C9914C07FAF005D911D /* AppDelegate.h */,
 				45804C9A14C07FAF005D911D /* AppDelegate.m */,
 				45804C9114C07FAF005D911D /* Supporting Files */,
+				45C7DE3F14C0802C00B47884 /* EnterDataViewController.h */,
+				45C7DE4014C0802C00B47884 /* EnterDataViewController.m */,
+				45C7DE4114C0802C00B47884 /* EnterDataViewController.xib */,
+				45E7A0BB14C08CB7008985C5 /* HistoryViewController.h */,
+				45E7A0BC14C08CB7008985C5 /* HistoryViewController.m */,
+				45E7A0BD14C08CB7008985C5 /* HistoryViewController.xib */,
+				45E7A0C014C08CD2008985C5 /* TotalsViewController.h */,
+				45E7A0C114C08CD2008985C5 /* TotalsViewController.m */,
+				45E7A0C214C08CD2008985C5 /* TotalsViewController.xib */,
+				45C7DE4514C08AD000B47884 /* SettingsViewController.h */,
+				45C7DE4614C08AD000B47884 /* SettingsViewController.m */,
+				45C7DE4714C08AD000B47884 /* SettingsViewController.xib */,
+				45E7A0C514C08CE1008985C5 /* HelpViewController.h */,
+				45E7A0C614C08CE1008985C5 /* HelpViewController.m */,
+				45E7A0C714C08CE1008985C5 /* HelpViewController.xib */,
+				45E7A28514C09695008985C5 /* PersonObject.h */,
+				45E7A28614C09696008985C5 /* PersonObject.m */,
+				45E7A28814C0996F008985C5 /* NewPersonViewController.h */,
+				45E7A28914C0996F008985C5 /* NewPersonViewController.m */,
+				45E7A28A14C0996F008985C5 /* NewPersonViewController.xib */,
 			);
 			path = "Money Travels";
 			sourceTree = "<group>";
@@ -88,6 +152,19 @@
 				45804C9814C07FAF005D911D /* Money Travels-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		45E7A0EA14C0953D008985C5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				45E7A1B414C0953D008985C5 /* icn_tabbaradd.png */,
+				45E7A1B514C0953D008985C5 /* icn_tabbarhelp.png */,
+				45E7A1B614C0953D008985C5 /* icn_tabbarhistory.png */,
+				45E7A1B714C0953D008985C5 /* icn_tabbarsettings.png */,
+				45E7A1B814C0953D008985C5 /* icn_tabbartotals.png */,
+			);
+			name = Resources;
+			path = "Money Travels/Resources";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +219,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				45804C9514C07FAF005D911D /* InfoPlist.strings in Resources */,
+				45C7DE4314C0802C00B47884 /* EnterDataViewController.xib in Resources */,
+				45C7DE4914C08AD000B47884 /* SettingsViewController.xib in Resources */,
+				45E7A0BF14C08CB7008985C5 /* HistoryViewController.xib in Resources */,
+				45E7A0C414C08CD2008985C5 /* TotalsViewController.xib in Resources */,
+				45E7A0C914C08CE1008985C5 /* HelpViewController.xib in Resources */,
+				45E7A28014C0953D008985C5 /* icn_tabbaradd.png in Resources */,
+				45E7A28114C0953D008985C5 /* icn_tabbarhelp.png in Resources */,
+				45E7A28214C0953D008985C5 /* icn_tabbarhistory.png in Resources */,
+				45E7A28314C0953D008985C5 /* icn_tabbarsettings.png in Resources */,
+				45E7A28414C0953D008985C5 /* icn_tabbartotals.png in Resources */,
+				45E7A28C14C09970008985C5 /* NewPersonViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +242,13 @@
 			files = (
 				45804C9714C07FAF005D911D /* main.m in Sources */,
 				45804C9B14C07FAF005D911D /* AppDelegate.m in Sources */,
+				45C7DE4214C0802C00B47884 /* EnterDataViewController.m in Sources */,
+				45C7DE4814C08AD000B47884 /* SettingsViewController.m in Sources */,
+				45E7A0BE14C08CB7008985C5 /* HistoryViewController.m in Sources */,
+				45E7A0C314C08CD2008985C5 /* TotalsViewController.m in Sources */,
+				45E7A0C814C08CE1008985C5 /* HelpViewController.m in Sources */,
+				45E7A28714C09696008985C5 /* PersonObject.m in Sources */,
+				45E7A28B14C09970008985C5 /* NewPersonViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +350,7 @@
 				45804CA014C07FAF005D911D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

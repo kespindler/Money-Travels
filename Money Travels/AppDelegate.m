@@ -7,22 +7,55 @@
 //
 
 #import "AppDelegate.h"
+#import "EnterDataViewController.h"
+#import "SettingsViewController.h"
+#import "HistoryViewController.h"
+#import "TotalsViewController.h"
+#import "HelpViewController.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
+@synthesize tabBarController;
+@synthesize people;
 
 - (void)dealloc
 {
     [_window release];
+    [tabBarController release];
     [super dealloc];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.people = [[[NSMutableArray alloc] initWithCapacity:3] autorelease];
+    
+    self.tabBarController = [[[UITabBarController alloc] init] autorelease];
+    NSMutableArray *viewControllers = [NSMutableArray arrayWithCapacity:5];
+    
+    UIViewController *viewController = nil;
+    
+    viewController = [[[EnterDataViewController alloc] init] autorelease];
+    [viewControllers addObject:viewController];
+    
+    viewController = [[[HistoryViewController alloc] init] autorelease];
+    [viewControllers addObject:viewController];
+    
+    viewController = [[[TotalsViewController alloc] init] autorelease];
+    [viewControllers addObject:viewController];
+    
+    SettingsViewController *settingsViewController = [[[SettingsViewController alloc] init] autorelease];
+    settingsViewController.people = self.people;
+    
+    [viewControllers addObject:settingsViewController];
+    
+    viewController = [[[HelpViewController alloc] init] autorelease];
+    [viewControllers addObject:viewController];
+    
+    [self.tabBarController setViewControllers:viewControllers];
+    [self.tabBarController setSelectedIndex:4];
+    [self.window setRootViewController:self.tabBarController];
     [self.window makeKeyAndVisible];
     return YES;
 }
