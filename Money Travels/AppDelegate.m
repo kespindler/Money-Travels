@@ -38,12 +38,17 @@
     NSMutableArray *viewControllers = [NSMutableArray arrayWithCapacity:5];
     
     UIViewController *viewController = nil;
+    UINavigationController *nc = nil;
     
-    viewController = [[[EnterDataViewController alloc] init] autorelease];
-    [viewControllers addObject:viewController];
+    EnterDataViewController *edvc = [[[EnterDataViewController alloc] init] autorelease];
+    edvc.people = self.people;
+    edvc.history = self.history;
+    nc = [[[UINavigationController alloc] initWithRootViewController:edvc] autorelease];
+    [viewControllers addObject:nc];
     
-    viewController = [[[HistoryViewController alloc] init] autorelease];
-    [viewControllers addObject:viewController];
+    HistoryViewController *hvc = [[[HistoryViewController alloc] init] autorelease];
+    hvc.history = self.history;
+    [viewControllers addObject:hvc];
     
     viewController = [[[TotalsViewController alloc] init] autorelease];
     [viewControllers addObject:viewController];

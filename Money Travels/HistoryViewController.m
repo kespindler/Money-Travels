@@ -7,8 +7,11 @@
 //
 
 #import "HistoryViewController.h"
+#import "PaymentObject.h"
 
 @implementation HistoryViewController
+
+@synthesize history;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -76,32 +79,20 @@
 }
 
 #pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return self.history.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
-    
-    // Configure the cell...
-    
+    PaymentObject *payment = [self.history objectAtIndex:indexPath.row];
+    NSString *boughtOrPaidString = payment.amount < 0 ? NSLocalizedString(@"bought", nil) : NSLocalizedString(@"paid", nil);
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@ $%f", payment.person.name, boughtOrPaidString, payment.amount];
     return cell;
 }
 
@@ -145,7 +136,6 @@
 */
 
 #pragma mark - Table view delegate
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.

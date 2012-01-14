@@ -106,9 +106,7 @@
 }
 
 - (void)personWasAdded {
-    [self dismissViewControllerAnimated:YES completion:^{
-//        [peopleTableView reloadData];
-    }];
+    [self dismissViewControllerAnimated:YES completion:nil];
     [peopleTableView reloadData];
 }
 

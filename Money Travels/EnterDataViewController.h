@@ -13,7 +13,7 @@ enum {
     BoughtOrPaidValuePaid = 1,
     };
 
-@interface EnterDataViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+@interface EnterDataViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
 @property (nonatomic, assign) NSArray *people;
 @property (nonatomic, assign) NSMutableArray *history;
