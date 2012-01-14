@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		456BD5A714C0AAE800E11001 /* PaymentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 456BD5A614C0AAE800E11001 /* PaymentObject.m */; };
 		45804C8B14C07FAF005D911D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45804C8A14C07FAF005D911D /* UIKit.framework */; };
 		45804C8D14C07FAF005D911D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45804C8C14C07FAF005D911D /* Foundation.framework */; };
 		45804C8F14C07FAF005D911D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45804C8E14C07FAF005D911D /* CoreGraphics.framework */; };
@@ -34,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		456BD5A514C0AAE800E11001 /* PaymentObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentObject.h; sourceTree = "<group>"; };
+		456BD5A614C0AAE800E11001 /* PaymentObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentObject.m; sourceTree = "<group>"; };
 		45804C8614C07FAF005D911D /* Money Travels.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Money Travels.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45804C8A14C07FAF005D911D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		45804C8C14C07FAF005D911D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -139,6 +142,8 @@
 				45E7A28814C0996F008985C5 /* NewPersonViewController.h */,
 				45E7A28914C0996F008985C5 /* NewPersonViewController.m */,
 				45E7A28A14C0996F008985C5 /* NewPersonViewController.xib */,
+				456BD5A514C0AAE800E11001 /* PaymentObject.h */,
+				456BD5A614C0AAE800E11001 /* PaymentObject.m */,
 			);
 			path = "Money Travels";
 			sourceTree = "<group>";
@@ -249,6 +254,7 @@
 				45E7A0C814C08CE1008985C5 /* HelpViewController.m in Sources */,
 				45E7A28714C09696008985C5 /* PersonObject.m in Sources */,
 				45E7A28B14C09970008985C5 /* NewPersonViewController.m in Sources */,
+				456BD5A714C0AAE800E11001 /* PaymentObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

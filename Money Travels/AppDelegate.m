@@ -18,11 +18,14 @@
 @synthesize window = _window;
 @synthesize tabBarController;
 @synthesize people;
+@synthesize history;
 
 - (void)dealloc
 {
     [_window release];
     [tabBarController release];
+    [people release];
+    [history release];
     [super dealloc];
 }
 

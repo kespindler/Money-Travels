@@ -13,5 +13,6 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, retain) UITabBarController *tabBarController;
 @property (nonatomic, retain) NSMutableArray *people;
+@property (nonatomic, retain) NSMutableArray *history;
 
 @end

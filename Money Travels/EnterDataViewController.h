@@ -8,6 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EnterDataViewController : UIViewController
+enum {
+    BoughtOrPaidValueBought = 0,
+    BoughtOrPaidValuePaid = 1,
+    };
+
+@interface EnterDataViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, assign) NSArray *people;
+@property (nonatomic, assign) NSMutableArray *history;
+
+@property (retain, nonatomic) IBOutlet UITableView *peopleTableView;
+@property (retain, nonatomic) IBOutlet UITextField *amountTextField;
+@property (retain, nonatomic) IBOutlet UISegmentedControl *boughtOrPaidSegmentedControl;
+
+- (IBAction)submitButtonPressed:(id)sender;
 
 @end
