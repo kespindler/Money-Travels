@@ -14,8 +14,9 @@
 		45804C9514C07FAF005D911D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45804C9314C07FAF005D911D /* InfoPlist.strings */; };
 		45804C9714C07FAF005D911D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45804C9614C07FAF005D911D /* main.m */; };
 		45804C9B14C07FAF005D911D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45804C9A14C07FAF005D911D /* AppDelegate.m */; };
-		45C7DE4214C0802C00B47884 /* EnterDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C7DE4014C0802C00B47884 /* EnterDataViewController.m */; };
-		45C7DE4314C0802C00B47884 /* EnterDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45C7DE4114C0802C00B47884 /* EnterDataViewController.xib */; };
+		458F268314C2996100E9315A /* EnterDataViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 458F268114C2996100E9315A /* EnterDataViewController2.m */; };
+		458F268814C2B24D00E9315A /* bkg_airplane.png in Resources */ = {isa = PBXBuildFile; fileRef = 458F268614C2B24D00E9315A /* bkg_airplane.png */; };
+		458F268914C2B24D00E9315A /* bkg_airplane@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 458F268714C2B24D00E9315A /* bkg_airplane@2x.png */; };
 		45C7DE4814C08AD000B47884 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C7DE4614C08AD000B47884 /* SettingsViewController.m */; };
 		45C7DE4914C08AD000B47884 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45C7DE4714C08AD000B47884 /* SettingsViewController.xib */; };
 		45E7A0BE14C08CB7008985C5 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E7A0BC14C08CB7008985C5 /* HistoryViewController.m */; };
@@ -47,9 +48,11 @@
 		45804C9814C07FAF005D911D /* Money Travels-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Money Travels-Prefix.pch"; sourceTree = "<group>"; };
 		45804C9914C07FAF005D911D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		45804C9A14C07FAF005D911D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		45C7DE3F14C0802C00B47884 /* EnterDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnterDataViewController.h; sourceTree = "<group>"; };
-		45C7DE4014C0802C00B47884 /* EnterDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnterDataViewController.m; sourceTree = "<group>"; };
-		45C7DE4114C0802C00B47884 /* EnterDataViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EnterDataViewController.xib; sourceTree = "<group>"; };
+		458F268014C2996100E9315A /* EnterDataViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnterDataViewController2.h; sourceTree = "<group>"; };
+		458F268114C2996100E9315A /* EnterDataViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnterDataViewController2.m; sourceTree = "<group>"; };
+		458F268214C2996100E9315A /* EnterDataViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EnterDataViewController2.xib; sourceTree = "<group>"; };
+		458F268614C2B24D00E9315A /* bkg_airplane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bkg_airplane.png; sourceTree = "<group>"; };
+		458F268714C2B24D00E9315A /* bkg_airplane@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bkg_airplane@2x.png"; sourceTree = "<group>"; };
 		45C7DE4514C08AD000B47884 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		45C7DE4614C08AD000B47884 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		45C7DE4714C08AD000B47884 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
@@ -119,12 +122,12 @@
 		45804C9014C07FAF005D911D /* Money Travels */ = {
 			isa = PBXGroup;
 			children = (
+				45804C9114C07FAF005D911D /* Supporting Files */,
 				45804C9914C07FAF005D911D /* AppDelegate.h */,
 				45804C9A14C07FAF005D911D /* AppDelegate.m */,
-				45804C9114C07FAF005D911D /* Supporting Files */,
-				45C7DE3F14C0802C00B47884 /* EnterDataViewController.h */,
-				45C7DE4014C0802C00B47884 /* EnterDataViewController.m */,
-				45C7DE4114C0802C00B47884 /* EnterDataViewController.xib */,
+				458F268014C2996100E9315A /* EnterDataViewController2.h */,
+				458F268114C2996100E9315A /* EnterDataViewController2.m */,
+				458F268214C2996100E9315A /* EnterDataViewController2.xib */,
 				45E7A0BB14C08CB7008985C5 /* HistoryViewController.h */,
 				45E7A0BC14C08CB7008985C5 /* HistoryViewController.m */,
 				45E7A0BD14C08CB7008985C5 /* HistoryViewController.xib */,
@@ -162,6 +165,8 @@
 		45E7A0EA14C0953D008985C5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				458F268614C2B24D00E9315A /* bkg_airplane.png */,
+				458F268714C2B24D00E9315A /* bkg_airplane@2x.png */,
 				45E7A1B414C0953D008985C5 /* icn_tabbaradd.png */,
 				45E7A1B514C0953D008985C5 /* icn_tabbarhelp.png */,
 				45E7A1B614C0953D008985C5 /* icn_tabbarhistory.png */,
@@ -224,7 +229,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				45804C9514C07FAF005D911D /* InfoPlist.strings in Resources */,
-				45C7DE4314C0802C00B47884 /* EnterDataViewController.xib in Resources */,
 				45C7DE4914C08AD000B47884 /* SettingsViewController.xib in Resources */,
 				45E7A0BF14C08CB7008985C5 /* HistoryViewController.xib in Resources */,
 				45E7A0C414C08CD2008985C5 /* TotalsViewController.xib in Resources */,
@@ -235,6 +239,8 @@
 				45E7A28314C0953D008985C5 /* icn_tabbarsettings.png in Resources */,
 				45E7A28414C0953D008985C5 /* icn_tabbartotals.png in Resources */,
 				45E7A28C14C09970008985C5 /* NewPersonViewController.xib in Resources */,
+				458F268814C2B24D00E9315A /* bkg_airplane.png in Resources */,
+				458F268914C2B24D00E9315A /* bkg_airplane@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,7 +253,6 @@
 			files = (
 				45804C9714C07FAF005D911D /* main.m in Sources */,
 				45804C9B14C07FAF005D911D /* AppDelegate.m in Sources */,
-				45C7DE4214C0802C00B47884 /* EnterDataViewController.m in Sources */,
 				45C7DE4814C08AD000B47884 /* SettingsViewController.m in Sources */,
 				45E7A0BE14C08CB7008985C5 /* HistoryViewController.m in Sources */,
 				45E7A0C314C08CD2008985C5 /* TotalsViewController.m in Sources */,
@@ -255,6 +260,7 @@
 				45E7A28714C09696008985C5 /* PersonObject.m in Sources */,
 				45E7A28B14C09970008985C5 /* NewPersonViewController.m in Sources */,
 				456BD5A714C0AAE800E11001 /* PaymentObject.m in Sources */,
+				458F268314C2996100E9315A /* EnterDataViewController2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

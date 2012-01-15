@@ -7,11 +7,12 @@
 //
 
 #import "AppDelegate.h"
-#import "EnterDataViewController.h"
+//#import "EnterDataViewController.h"
 #import "SettingsViewController.h"
 #import "HistoryViewController.h"
 #import "TotalsViewController.h"
 #import "HelpViewController.h"
+#import "EnterDataViewController2.h"
 
 @implementation AppDelegate
 
@@ -37,10 +38,9 @@
     self.tabBarController = [[[UITabBarController alloc] init] autorelease];
     NSMutableArray *viewControllers = [NSMutableArray arrayWithCapacity:5];
     
-    UIViewController *viewController = nil;
     UINavigationController *nc = nil;
     
-    EnterDataViewController *edvc = [[[EnterDataViewController alloc] init] autorelease];
+    EnterDataViewController2 *edvc = [[[EnterDataViewController2 alloc] init] autorelease];
     edvc.people = self.people;
     edvc.history = self.history;
     nc = [[[UINavigationController alloc] initWithRootViewController:edvc] autorelease];
@@ -48,18 +48,21 @@
     
     HistoryViewController *hvc = [[[HistoryViewController alloc] init] autorelease];
     hvc.history = self.history;
-    [viewControllers addObject:hvc];
+    nc = [[[UINavigationController alloc] initWithRootViewController:hvc] autorelease];
+    [viewControllers addObject:nc];
     
-    viewController = [[[TotalsViewController alloc] init] autorelease];
-    [viewControllers addObject:viewController];
+    TotalsViewController *tvc = [[[TotalsViewController alloc] init] autorelease];
+    nc = [[[UINavigationController alloc] initWithRootViewController:tvc] autorelease];
+    [viewControllers addObject:nc];
     
     SettingsViewController *settingsViewController = [[[SettingsViewController alloc] init] autorelease];
     settingsViewController.people = self.people;
+    nc = [[[UINavigationController alloc] initWithRootViewController:settingsViewController] autorelease];
+    [viewControllers addObject:nc];
     
-    [viewControllers addObject:settingsViewController];
-    
-    viewController = [[[HelpViewController alloc] init] autorelease];
-    [viewControllers addObject:viewController];
+    HelpViewController *helpvc = [[[HelpViewController alloc] init] autorelease];
+    nc = [[[UINavigationController alloc] initWithRootViewController:helpvc] autorelease];
+    [viewControllers addObject:nc];
     
     [self.tabBarController setViewControllers:viewControllers];
     [self.tabBarController setSelectedIndex:4];
