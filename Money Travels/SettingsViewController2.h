@@ -15,8 +15,16 @@ enum {
     SettingsSectionNumSections,
 };
 
-@interface SettingsViewController2 : UITableViewController<NewPersonViewControllerDelegate>
+enum {
+    AlertViewTagDeletePerson,
+    AlertViewTagReset,
+};
 
+@class PersonObject;
+
+@interface SettingsViewController2 : UITableViewController<NewPersonViewControllerDelegate, UIAlertViewDelegate>
+
+@property (nonatomic, assign) PersonObject *personToDelete;
 @property (nonatomic, assign) NSMutableArray *people;
 @property (nonatomic, assign) NSMutableArray *history;
 

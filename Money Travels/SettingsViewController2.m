@@ -7,12 +7,14 @@
 //
 
 #import "SettingsViewController2.h"
-
+#import "PaymentObject.h"
+#import "PersonObject.h"
 
 @implementation SettingsViewController2
 
 @synthesize people = _people;
 @synthesize history = _history;
+@synthesize personToDelete = _personToDelete;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -119,43 +121,65 @@
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    if (editingStyle == UITableViewCellEditingStyleDelete && indexPath.section == SettingsSectionPeople) {        
+        self.personToDelete = [self.people objectAtIndex:indexPath.row];
+        UIAlertView *alert = nil;
+        alert.tag = AlertViewTagDeletePerson;
+    }
 }
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    NSInteger section = indexPath.section;
+    if (section == SettingsSectionPeople) {
+        if (indexPath.row == self.people.count) {
+            NewPersonViewController *newPersonViewController = [[[NewPersonViewController alloc] init] autorelease];
+            newPersonViewController.people = self.people;
+            newPersonViewController.addPersonViewControllerDelegate = self;
+            UINavigationController *nc = [[[UINavigationController alloc] initWithRootViewController:newPersonViewController] autorelease];
+            [self presentModalViewController:nc animated:YES];        
+        }
+    } else if (section == SettingsSectionReset) {
+        UIAlertView *alert = [[[UIAlertView alloc]
+                               initWithTitle:NSLocalizedString(@"Reset", nil)
+                               message:NSLocalizedString(@"Are you sure you want to clear all data?", nil)
+                               delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
+                               otherButtonTitles:NSLocalizedString(@"Yes", nil), nil] autorelease];
+        alert.tag = AlertViewTagReset;
+        [alert show];
+    }
 }
+
+#pragma mark - UIAlertViewDelegate methods
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) return;
+    NSInteger tag = alertView.tag;
+    if (tag == AlertViewTagDeletePerson) {
+        NSMutableIndexSet *paymentsToRemove = [NSMutableIndexSet indexSet];
+        NSInteger index = 0;
+        for (PaymentObject *p in self.history) {
+            if (p.person == self.personToDelete) {
+                [paymentsToRemove addIndex:index];
+            }
+            index++;
+        }
+        [self.history removeObjectsAtIndexes:paymentsToRemove];
+        [self.people removeObject:self.personToDelete];
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:SettingsSectionPeople] withRowAnimation:UITableViewRowAnimationNone];
+    } else if (tag == AlertViewTagReset) {
+        [self.people removeAllObjects];
+        [self.history removeAllObjects];
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:SettingsSectionPeople] withRowAnimation:UITableViewRowAnimationNone];
+    }
+    //TODO: might wnat to save config here.
+}
+
+- (void)personWasAdded {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:SettingsSectionPeople] withRowAnimation:UITableViewRowAnimationNone];
+}
+
+
 
 @end

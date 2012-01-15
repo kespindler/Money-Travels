@@ -18,7 +18,6 @@
 		458F268814C2B24D00E9315A /* bkg_airplane.png in Resources */ = {isa = PBXBuildFile; fileRef = 458F268614C2B24D00E9315A /* bkg_airplane.png */; };
 		458F268914C2B24D00E9315A /* bkg_airplane@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 458F268714C2B24D00E9315A /* bkg_airplane@2x.png */; };
 		458F269914C2C90400E9315A /* SettingsViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 458F269814C2C90400E9315A /* SettingsViewController2.m */; };
-		45C7DE4814C08AD000B47884 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C7DE4614C08AD000B47884 /* SettingsViewController.m */; };
 		45E7A0BE14C08CB7008985C5 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E7A0BC14C08CB7008985C5 /* HistoryViewController.m */; };
 		45E7A0BF14C08CB7008985C5 /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45E7A0BD14C08CB7008985C5 /* HistoryViewController.xib */; };
 		45E7A0C314C08CD2008985C5 /* TotalsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E7A0C114C08CD2008985C5 /* TotalsViewController.m */; };
@@ -254,7 +253,6 @@
 			files = (
 				45804C9714C07FAF005D911D /* main.m in Sources */,
 				45804C9B14C07FAF005D911D /* AppDelegate.m in Sources */,
-				45C7DE4814C08AD000B47884 /* SettingsViewController.m in Sources */,
 				45E7A0BE14C08CB7008985C5 /* HistoryViewController.m in Sources */,
 				45E7A0C314C08CD2008985C5 /* TotalsViewController.m in Sources */,
 				45E7A0C814C08CE1008985C5 /* HelpViewController.m in Sources */,
