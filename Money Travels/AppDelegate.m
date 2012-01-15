@@ -7,12 +7,11 @@
 //
 
 #import "AppDelegate.h"
-//#import "EnterDataViewController.h"
-#import "SettingsViewController.h"
 #import "HistoryViewController.h"
 #import "TotalsViewController.h"
 #import "HelpViewController.h"
 #import "EnterDataViewController2.h"
+#import "SettingsViewController2.h"
 
 @implementation AppDelegate
 
@@ -79,9 +78,10 @@
     nc = [[[UINavigationController alloc] initWithRootViewController:tvc] autorelease];
     [viewControllers addObject:nc];
     
-    SettingsViewController *settingsViewController = [[[SettingsViewController alloc] init] autorelease];
-    settingsViewController.people = self.people;
-    nc = [[[UINavigationController alloc] initWithRootViewController:settingsViewController] autorelease];
+    SettingsViewController2 *svc = [[[SettingsViewController2 alloc] init] autorelease];
+    svc.people = self.people;
+    svc.history = self.history;
+    nc = [[[UINavigationController alloc] initWithRootViewController:svc] autorelease];
     [viewControllers addObject:nc];
     
     HelpViewController *helpvc = [[[HelpViewController alloc] init] autorelease];

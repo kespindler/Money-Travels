@@ -17,8 +17,8 @@
 		458F268314C2996100E9315A /* EnterDataViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 458F268114C2996100E9315A /* EnterDataViewController2.m */; };
 		458F268814C2B24D00E9315A /* bkg_airplane.png in Resources */ = {isa = PBXBuildFile; fileRef = 458F268614C2B24D00E9315A /* bkg_airplane.png */; };
 		458F268914C2B24D00E9315A /* bkg_airplane@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 458F268714C2B24D00E9315A /* bkg_airplane@2x.png */; };
+		458F269914C2C90400E9315A /* SettingsViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 458F269814C2C90400E9315A /* SettingsViewController2.m */; };
 		45C7DE4814C08AD000B47884 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C7DE4614C08AD000B47884 /* SettingsViewController.m */; };
-		45C7DE4914C08AD000B47884 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45C7DE4714C08AD000B47884 /* SettingsViewController.xib */; };
 		45E7A0BE14C08CB7008985C5 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E7A0BC14C08CB7008985C5 /* HistoryViewController.m */; };
 		45E7A0BF14C08CB7008985C5 /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45E7A0BD14C08CB7008985C5 /* HistoryViewController.xib */; };
 		45E7A0C314C08CD2008985C5 /* TotalsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E7A0C114C08CD2008985C5 /* TotalsViewController.m */; };
@@ -53,9 +53,10 @@
 		458F268214C2996100E9315A /* EnterDataViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EnterDataViewController2.xib; sourceTree = "<group>"; };
 		458F268614C2B24D00E9315A /* bkg_airplane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bkg_airplane.png; sourceTree = "<group>"; };
 		458F268714C2B24D00E9315A /* bkg_airplane@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bkg_airplane@2x.png"; sourceTree = "<group>"; };
+		458F269714C2C90400E9315A /* SettingsViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController2.h; sourceTree = "<group>"; };
+		458F269814C2C90400E9315A /* SettingsViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController2.m; sourceTree = "<group>"; };
 		45C7DE4514C08AD000B47884 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		45C7DE4614C08AD000B47884 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		45C7DE4714C08AD000B47884 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		45E7A0BB14C08CB7008985C5 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
 		45E7A0BC14C08CB7008985C5 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
 		45E7A0BD14C08CB7008985C5 /* HistoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
@@ -136,7 +137,8 @@
 				45E7A0C214C08CD2008985C5 /* TotalsViewController.xib */,
 				45C7DE4514C08AD000B47884 /* SettingsViewController.h */,
 				45C7DE4614C08AD000B47884 /* SettingsViewController.m */,
-				45C7DE4714C08AD000B47884 /* SettingsViewController.xib */,
+				458F269714C2C90400E9315A /* SettingsViewController2.h */,
+				458F269814C2C90400E9315A /* SettingsViewController2.m */,
 				45E7A0C514C08CE1008985C5 /* HelpViewController.h */,
 				45E7A0C614C08CE1008985C5 /* HelpViewController.m */,
 				45E7A0C714C08CE1008985C5 /* HelpViewController.xib */,
@@ -229,7 +231,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				45804C9514C07FAF005D911D /* InfoPlist.strings in Resources */,
-				45C7DE4914C08AD000B47884 /* SettingsViewController.xib in Resources */,
 				45E7A0BF14C08CB7008985C5 /* HistoryViewController.xib in Resources */,
 				45E7A0C414C08CD2008985C5 /* TotalsViewController.xib in Resources */,
 				45E7A0C914C08CE1008985C5 /* HelpViewController.xib in Resources */,
@@ -261,6 +262,7 @@
 				45E7A28B14C09970008985C5 /* NewPersonViewController.m in Sources */,
 				456BD5A714C0AAE800E11001 /* PaymentObject.m in Sources */,
 				458F268314C2996100E9315A /* EnterDataViewController2.m in Sources */,
+				458F269914C2C90400E9315A /* SettingsViewController2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

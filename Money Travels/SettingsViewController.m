@@ -10,7 +10,7 @@
 
 @implementation SettingsViewController
 
-@synthesize peopleTableView;
+
 @synthesize people;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

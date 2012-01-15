@@ -9,9 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "NewPersonViewController.h"
 
-@interface SettingsViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, NewPersonViewControllerDelegate>
+@interface SettingsViewController : UITableViewController<NewPersonViewControllerDelegate>
 
-@property (retain, nonatomic) IBOutlet UITableView *peopleTableView;
 @property (nonatomic, assign) NSMutableArray *people;
 
 - (IBAction)resetButtonPressed:(id)sender;
