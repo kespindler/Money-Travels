@@ -51,14 +51,10 @@
     UIImageView *backgroundView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bkg_airplane.png"]] autorelease];
     backgroundView.contentMode = UIViewContentModeTop;
     self.tableView.backgroundView = backgroundView;
-    NSNotificationCenter *noc = [NSNotificationCenter defaultCenter];
-    [noc addObserver:self selector:@selector(keyboardEvent:) name:UIKeyboardDidShowNotification object:nil];
-    [noc addObserver:self selector:@selector(keyboardEvent:) name:UIKeyboardWillHideNotification object:nil];
 }
 
 - (void)viewDidUnload {
     [super viewDidUnload];
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
     self.boughtOrPaidSegmentedControl = nil;
     self.amountTextField = nil;
 //    self.submitButton = nil;
@@ -189,26 +185,6 @@
     return YES;
 }
 */
-
-#pragma mark - UIKeyboard notifications
-- (void)keyboardEvent:(NSNotification *)note {
-    if (note.name == UIKeyboardWillShowNotification) {
-        CGSize keyboardSize = [[note.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
-        keyboardSize.height += self.activeTextField.inputAccessoryView.frame.size.height; //is 0 if no input accessory view.
-        UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize.height, 0.0);
-        self.tableView.contentInset = contentInsets;
-        self.tableView.scrollIndicatorInsets = contentInsets;
-        CGRect rect = self.view.frame;
-        rect.size.height -= keyboardSize.height;
-        if (!CGRectContainsRect(rect, self.activeTextField.frame)) {
-            CGPoint scrollPoint = CGPointMake(0.0, self.activeTextField.frame.origin.y - (keyboardSize.height - 15));
-            [self.tableView setContentOffset:scrollPoint animated:YES];
-        }
-    } else if (note.name == UIKeyboardWillHideNotification) {
-        self.tableView.contentInset = UIEdgeInsetsZero;
-        self.tableView.scrollIndicatorInsets = UIEdgeInsetsZero;
-    }
-}
 
 #pragma mark - UITextFieldDelegate methods
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
