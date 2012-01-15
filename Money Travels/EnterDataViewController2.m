@@ -90,14 +90,19 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (!cell) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-        cell.textLabel.textColor = [UIColor blackColor];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.textLabel.textAlignment = UITextAlignmentLeft;
     }
+    cell.textLabel.textColor = [UIColor blackColor];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.textLabel.textAlignment = UITextAlignmentLeft;
+    cell.accessoryType = UITableViewCellAccessoryNone;
     if (indexPath.section == EnterDataSectionPeople) {
         if (self.people.count) {
-            cell.textLabel.text = [[self.people objectAtIndex:indexPath.row] name];
+            PersonObject *person = [self.people objectAtIndex:indexPath.row];
+            cell.textLabel.text = person.name;
             cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+            if (person == self.selectedPerson) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            }
         } else {
             cell.textLabel.textColor = [UIColor lightGrayColor];
             cell.textLabel.text = NSLocalizedString(@"Add people in settings!", nil);
@@ -206,7 +211,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == EnterDataSectionPeople && self.people.count) {
         self.selectedPerson = [self.people objectAtIndex:indexPath.row];
-    } else if (indexPath.section == EnterDataSectionSubmit) {
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:EnterDataSectionPeople] withRowAnimation:UITableViewRowAnimationNone];
+    }
+    else if (indexPath.section == EnterDataSectionSubmit) {
         [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:NO];
         NSNumberFormatter *f = [[[NSNumberFormatter alloc] init] autorelease];
         f.numberStyle = NSNumberFormatterDecimalStyle;
@@ -236,6 +243,8 @@
             PaymentObject *payment = [PaymentObject paymentObjectWithAmount:amount fromPerson:self.selectedPerson];
             [self.history addObject:payment];
             self.amountTextField.text = @"";
+            self.selectedPerson = nil;
+            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:EnterDataSectionPeople] withRowAnimation:UITableViewRowAnimationNone];
             UIAlertView *alert = [[[UIAlertView alloc] 
                                    initWithTitle:NSLocalizedString(@"Item Added", nil) 
                                    message:message
