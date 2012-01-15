@@ -251,8 +251,8 @@
         } else /*passed all validation */ {
             NSInteger selection = self.boughtOrPaidSegmentedControl.selectedSegmentIndex;
             NSString *message = nil;
-            if (selection == BoughtOrPaidValueBought) message = NSLocalizedString(@"%@ bought items totalling $%f.", nil);
-            else if (selection == BoughtOrPaidValuePaid) message = NSLocalizedString(@"%@ paid for items totalling $%f.", nil);
+            if (selection == BoughtOrPaidValueBought) message = NSLocalizedString(@"%@ bought items totalling $%.2f.", nil);
+            else if (selection == BoughtOrPaidValuePaid) message = NSLocalizedString(@"%@ paid for items totalling $%.2f.", nil);
             message = [NSString stringWithFormat:message, self.selectedPerson.name, amount];
             if (selection == BoughtOrPaidValueBought) {
                 amount *= -1;
