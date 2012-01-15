@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "PersonObject.h"
 
-@interface PaymentObject : NSObject
+@interface PaymentObject : NSObject<NSCoding>
 
-@property (nonatomic) CGFloat amount;
-@property (nonatomic, assign) PersonObject *person;
+@property (nonatomic, assign) CGFloat amount;
+@property (nonatomic, assign) NSInteger personId;
 
 + (PaymentObject *)paymentObjectWithAmount:(CGFloat)theAmount fromPerson:(PersonObject *)fromPerson;
 @end

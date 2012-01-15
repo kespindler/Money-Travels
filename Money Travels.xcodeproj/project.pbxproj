@@ -54,8 +54,6 @@
 		458F268714C2B24D00E9315A /* bkg_airplane@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bkg_airplane@2x.png"; sourceTree = "<group>"; };
 		458F269714C2C90400E9315A /* SettingsViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController2.h; sourceTree = "<group>"; };
 		458F269814C2C90400E9315A /* SettingsViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController2.m; sourceTree = "<group>"; };
-		45C7DE4514C08AD000B47884 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
-		45C7DE4614C08AD000B47884 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		45E7A0BB14C08CB7008985C5 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
 		45E7A0BC14C08CB7008985C5 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
 		45E7A0BD14C08CB7008985C5 /* HistoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
@@ -134,18 +132,16 @@
 				45E7A0C014C08CD2008985C5 /* TotalsViewController.h */,
 				45E7A0C114C08CD2008985C5 /* TotalsViewController.m */,
 				45E7A0C214C08CD2008985C5 /* TotalsViewController.xib */,
-				45C7DE4514C08AD000B47884 /* SettingsViewController.h */,
-				45C7DE4614C08AD000B47884 /* SettingsViewController.m */,
 				458F269714C2C90400E9315A /* SettingsViewController2.h */,
 				458F269814C2C90400E9315A /* SettingsViewController2.m */,
 				45E7A0C514C08CE1008985C5 /* HelpViewController.h */,
 				45E7A0C614C08CE1008985C5 /* HelpViewController.m */,
 				45E7A0C714C08CE1008985C5 /* HelpViewController.xib */,
-				45E7A28514C09695008985C5 /* PersonObject.h */,
-				45E7A28614C09696008985C5 /* PersonObject.m */,
 				45E7A28814C0996F008985C5 /* NewPersonViewController.h */,
 				45E7A28914C0996F008985C5 /* NewPersonViewController.m */,
 				45E7A28A14C0996F008985C5 /* NewPersonViewController.xib */,
+				45E7A28514C09695008985C5 /* PersonObject.h */,
+				45E7A28614C09696008985C5 /* PersonObject.m */,
 				456BD5A514C0AAE800E11001 /* PaymentObject.h */,
 				456BD5A614C0AAE800E11001 /* PaymentObject.m */,
 			);

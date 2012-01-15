@@ -8,16 +8,33 @@
 
 #import "PaymentObject.h"
 
+#define EncodingKeyPersonId @"PaymentObjectCoderKeyPersonId"
+#define EncodingKeyAmount @"PaymentObjectCoderKeyAmount"
+
 @implementation PaymentObject
 
-@synthesize amount;
-@synthesize person;
+@synthesize amount = _amount;
+@synthesize personId = _personId;
 
 + (PaymentObject *)paymentObjectWithAmount:(CGFloat)theAmount fromPerson:(PersonObject *)fromPerson {
     PaymentObject *paymentObject = [[[[self class] alloc] init] autorelease];
     paymentObject.amount = theAmount;
-    paymentObject.person = fromPerson;
+    paymentObject.personId = fromPerson.personId;
     return paymentObject;
 }
+
+#pragma mark - NSCoding methods
+- (id)initWithCoder:(NSCoder *)coder {
+    self = [self init];
+    self.amount = [coder decodeIntegerForKey:EncodingKeyAmount];
+    self.personId = [coder decodeIntegerForKey:EncodingKeyPersonId];
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)coder {
+    [coder encodeInteger:self.personId forKey:EncodingKeyPersonId];
+    [coder encodeInteger:self.amount forKey:EncodingKeyAmount];
+}
+
 
 @end

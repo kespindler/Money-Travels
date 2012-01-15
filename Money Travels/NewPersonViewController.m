@@ -8,6 +8,7 @@
 
 #import "NewPersonViewController.h"
 #import "PersonObject.h"
+#import "AppDelegate.h"
 
 @implementation NewPersonViewController
 @synthesize people;
@@ -37,7 +38,9 @@
 
 - (void)addButtonPressed {
     if (addPersonNameTextField.text.length) {
-        [self.people addObject:[PersonObject personWithName:addPersonNameTextField.text]];
+        AppDelegate *ad = [UIApplication sharedApplication].delegate;
+        [self.people addObject:[ad newPersonWithName:addPersonNameTextField.text]];
+        [ad saveData];
     }
     [addPersonViewControllerDelegate personWasAdded];
 }

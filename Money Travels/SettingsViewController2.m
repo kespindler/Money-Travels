@@ -159,7 +159,7 @@
         NSMutableIndexSet *paymentsToRemove = [NSMutableIndexSet indexSet];
         NSInteger index = 0;
         for (PaymentObject *p in self.history) {
-            if (p.person == self.personToDelete) {
+            if (p.personId == self.personToDelete.personId) {
                 [paymentsToRemove addIndex:index];
             }
             index++;
@@ -175,6 +175,7 @@
     //TODO: might wnat to save config here.
 }
 
+#pragma mark - NewPersonViewControllerDelegate methods
 - (void)personWasAdded {
     [self dismissViewControllerAnimated:YES completion:nil];
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:SettingsSectionPeople] withRowAnimation:UITableViewRowAnimationNone];

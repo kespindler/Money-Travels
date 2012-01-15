@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PersonObject : NSObject
+@interface PersonObject : NSObject<NSCoding>
 
 @property (nonatomic, copy) NSString *name;
+@property (nonatomic, assign) NSInteger personId;
 
-+ (PersonObject *)personWithName:(NSString *)newPersonName;
++ (PersonObject *)personWithName:(NSString *)newPersonName personId:(NSInteger)personId;
 
 @end

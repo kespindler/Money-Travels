@@ -12,6 +12,10 @@
 #import "HelpViewController.h"
 #import "EnterDataViewController2.h"
 #import "SettingsViewController2.h"
+#import "PersonObject.h"
+
+#define StorageKeyPersonArray @"StorageKeyPersonArray"
+#define StorageKeyHistoryArray @"StorageKeyHistoryArray"
 
 @implementation AppDelegate
 
@@ -36,18 +40,44 @@
     return filename;
 }
 
-- (void)applicationWillTerminate:(UIApplication *)application {
-	NSArray *values = [[NSArray alloc] initWithObjects:self.people, self.history, nil];
-	[values writeToFile:[self storageFilePath] atomically:YES];
+#pragma mark - PersonObject data interaction methods
+- (PersonObject *)personForPersonId:(NSInteger)personId {
+    for (PersonObject *p in self.people) {
+        if (p.personId == personId) {
+            return p;
+        }
+    }
+    return nil;
+}
+
+- (PersonObject *)newPersonWithName:(NSString *)name {
+    NSInteger maxCurrentId = -1;
+    for (PersonObject *p in self.people) {
+        if (p.personId > maxCurrentId) {
+            maxCurrentId = p.personId;
+        }
+    }
+    return [PersonObject personWithName:name personId:maxCurrentId + 1];
+}
+
+- (void)saveData {
+    NSArray *values = [[NSArray alloc] initWithObjects:self.people, self.history, nil];
+    [NSKeyedArchiver archiveRootObject:values toFile:[self storageFilePath]];
 	[values release];
+}
+
+- (void)applicationWillTerminate:(UIApplication *)application {
+    [self saveData];
 }
 
 - (void)createUserDataObjects {
     BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:[self storageFilePath]];
 	if (fileExists) {
-		NSArray *values = [[[NSArray alloc] initWithContentsOfFile:[self storageFilePath]] autorelease];
-		self.people = [values objectAtIndex:0];
-		self.history = [values objectAtIndex:1];
+        NSArray *values = [NSKeyedUnarchiver unarchiveObjectWithFile:[self storageFilePath]];
+		NSArray *peopleArray = [values objectAtIndex:0];
+        NSArray *historyArray = [values objectAtIndex:1];
+        self.people = [NSMutableArray arrayWithArray:peopleArray];
+        self.history = [NSMutableArray arrayWithArray:historyArray];
 	} else {
         self.people = [[[NSMutableArray alloc] initWithCapacity:3] autorelease];
         self.history = [[[NSMutableArray alloc] initWithCapacity:25] autorelease];
@@ -106,6 +136,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
+    [self saveData];
     /*
      Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
      If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.

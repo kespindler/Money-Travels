@@ -8,6 +8,7 @@
 
 #import "HistoryViewController.h"
 #import "PaymentObject.h"
+#import "AppDelegate.h"
 
 @implementation HistoryViewController
 
@@ -88,13 +89,15 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
+    cell.textLabel.adjustsFontSizeToFitWidth = YES;
     PaymentObject *payment = [self.history objectAtIndex:indexPath.row];
     NSString *message = nil;
     if (payment.amount < 0) message = NSLocalizedString(@"%@ bought items totalling $%.2f.", nil);
     else message = NSLocalizedString(@"%@ paid for items totalling $%.2f.", nil);
-    cell.textLabel.text = [NSString stringWithFormat:message, payment.person.name, ABS(payment.amount)];
+    AppDelegate *ad = (id)[UIApplication sharedApplication].delegate;
+    cell.textLabel.text = [NSString stringWithFormat:message, [ad personForPersonId:payment.personId].name, ABS(payment.amount)];
     return cell;
 }
 
