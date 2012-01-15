@@ -30,10 +30,34 @@
     [super dealloc];
 }
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+- (NSString *)storageFilePath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *filename = [documentsDirectory stringByAppendingPathComponent:@"Storage.plist"];
+    return filename;
+}
+
+- (void)applicationWillTerminate:(UIApplication *)application {
+	NSArray *values = [[NSArray alloc] initWithObjects:self.people, self.history, nil];
+	[values writeToFile:[self storageFilePath] atomically:YES];
+	[values release];
+}
+
+- (void)createUserDataObjects {
+    BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:[self storageFilePath]];
+	if (fileExists) {
+		NSArray *values = [[[NSArray alloc] initWithContentsOfFile:[self storageFilePath]] autorelease];
+		self.people = [values objectAtIndex:0];
+		self.history = [values objectAtIndex:1];
+	} else {
+        self.people = [[[NSMutableArray alloc] initWithCapacity:3] autorelease];
+        self.history = [[[NSMutableArray alloc] initWithCapacity:25] autorelease];
+    }
+}
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    self.people = [[[NSMutableArray alloc] initWithCapacity:3] autorelease];
+    [self createUserDataObjects];
     
     self.tabBarController = [[[UITabBarController alloc] init] autorelease];
     NSMutableArray *viewControllers = [NSMutableArray arrayWithCapacity:5];
@@ -64,6 +88,7 @@
     nc = [[[UINavigationController alloc] initWithRootViewController:helpvc] autorelease];
     [viewControllers addObject:nc];
     
+;
     [self.tabBarController setViewControllers:viewControllers];
     [self.tabBarController setSelectedIndex:4];
     [self.window setRootViewController:self.tabBarController];
