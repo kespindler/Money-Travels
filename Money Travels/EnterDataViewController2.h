@@ -32,14 +32,12 @@ enum {
 
 @property (nonatomic, assign) NSArray *people;
 @property (nonatomic, assign) NSMutableArray *history;
-@property (nonatomic, assign) PersonObject *selectedPerson;
+@property (nonatomic, retain) PersonObject *selectedPerson;
 
 @property (nonatomic, retain) UITextField *amountTextField;
 @property (nonatomic, retain) UISegmentedControl *boughtOrPaidSegmentedControl;
-//@property (nonatomic, retain) UIButton *submitButton;
-@property (nonatomic, retain) UIToolbar *keyboardToolbar;
 
-@property (nonatomic, assign) UITextField *activeTextField;
+@property (nonatomic, retain) UIToolbar *keyboardToolbar;
 
 //todo; should be private
 - (NSString*)stringForSegment:(NSInteger)segment;

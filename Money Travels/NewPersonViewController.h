@@ -14,10 +14,10 @@
 
 @end
 
-@interface NewPersonViewController : UIViewController
+@interface NewPersonViewController : UITableViewController<UITextFieldDelegate>
 
 @property (nonatomic, assign) NSMutableArray *people;
 @property (nonatomic, assign) id<NewPersonViewControllerDelegate> addPersonViewControllerDelegate;
-@property (retain, nonatomic) IBOutlet UITextField *addPersonNameTextField;
+@property (retain, nonatomic) UITextField *addPersonNameTextField;
 
 @end

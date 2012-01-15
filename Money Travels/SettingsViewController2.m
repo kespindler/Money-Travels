@@ -123,8 +123,13 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete && indexPath.section == SettingsSectionPeople) {        
         self.personToDelete = [self.people objectAtIndex:indexPath.row];
-        UIAlertView *alert = nil;
+        UIAlertView *alert = [[[UIAlertView alloc]
+                               initWithTitle:NSLocalizedString(@"Delete Person", nil)
+                               message:[NSString stringWithFormat:NSLocalizedString(@"Are you sure you want to delete %@? All their data will be cleared from history.", nil), self.personToDelete.name]
+                               delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
+                               otherButtonTitles:NSLocalizedString(@"Yes", nil), nil] autorelease];
         alert.tag = AlertViewTagDeletePerson;
+        [alert show];
     }
 }
 

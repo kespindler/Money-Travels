@@ -10,6 +10,6 @@
 
 @interface HistoryViewController : UITableViewController
 
-@property (nonatomic, assign) NSArray *history;
+@property (nonatomic, assign) NSMutableArray *history;
 
 @end

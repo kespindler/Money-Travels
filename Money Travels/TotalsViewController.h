@@ -10,8 +10,8 @@
 
 enum {
     TotalsSectionsPeople,
-    TotalsSectionsNumSections,
     TotalsSectionsDirections,//unused for now.
+    TotalsSectionsNumSections,
 };
 
 @interface TotalsViewController : UITableViewController

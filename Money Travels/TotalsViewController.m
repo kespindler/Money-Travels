@@ -89,17 +89,21 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSInteger rows = 0;
     if (section == TotalsSectionsPeople) rows = self.people.count;
+    if (section == TotalsSectionsDirections) rows = 1;
     return rows;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (!cell) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
-    }
+#define NUMROWS 4
+    UITableViewCell *cell = nil;
     NSInteger section = indexPath.section;
     if (section == TotalsSectionsPeople) {
+        static NSString *CellIdentifier = @"Cell";
+        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (!cell) {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
+        }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         CGFloat total = 0.0f;
         PersonObject *person = [self.people objectAtIndex:indexPath.row];
         for (PaymentObject *payment in self.history) {
@@ -115,6 +119,17 @@
             cell.detailTextLabel.text = [NSString stringWithFormat:@"$%.2f", total];
             cell.detailTextLabel.textColor = [UIColor blackColor];
         }
+    } else if (section == TotalsSectionsDirections) {
+        static NSString *CellIdentifier = @"DirectionsCell";
+        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (!cell) {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        }
+        cell.textLabel.font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.textLabel.adjustsFontSizeToFitWidth = YES;
+        cell.textLabel.numberOfLines = NUMROWS;
+        cell.textLabel.text = @"If your balance is red, you owe someone money. Make a payment to someone in the black, go to Add Payment to record it. Once everyone is black, you're all good to go!";
     }
     return cell;
 }
@@ -159,6 +174,12 @@
 */
 
 #pragma mark - Table view delegate
+- (CGFloat) tableView:(UITableView *)aTableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == TotalsSectionsDirections) {
+        return  (44.0 + (NUMROWS - 1) * 19.0);
+    }
+    return 44.0;
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

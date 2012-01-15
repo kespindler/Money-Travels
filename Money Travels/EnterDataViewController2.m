@@ -15,10 +15,8 @@
 
 @synthesize people = _people;
 @synthesize history = _history;
-@synthesize activeTextField = _activeTextField;
 @synthesize amountTextField = _amountTextField;
 @synthesize boughtOrPaidSegmentedControl = _boughtOrPaidSegmentedControl;
-//@synthesize submitButton = _submitButton;
 @synthesize keyboardToolbar = _keyboardToolbar;
 @synthesize selectedPerson = _selectedPerson;
 
@@ -47,7 +45,6 @@
 #pragma mark - View lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.clearsSelectionOnViewWillAppear = NO;
     UIImageView *backgroundView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bkg_airplane.png"]] autorelease];
     backgroundView.contentMode = UIViewContentModeTop;
     self.tableView.backgroundView = backgroundView;
@@ -57,11 +54,13 @@
     [super viewDidUnload];
     self.boughtOrPaidSegmentedControl = nil;
     self.amountTextField = nil;
-//    self.submitButton = nil;
     self.keyboardToolbar = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    if (![self.people containsObject:self.selectedPerson]) {
+        self.selectedPerson = nil;
+    }
     [super viewWillAppear:animated];
 }
 
@@ -116,15 +115,12 @@
                 self.boughtOrPaidSegmentedControl = [[[UISegmentedControl alloc] initWithItems:segmentItems] autorelease];
                 self.boughtOrPaidSegmentedControl.selectedSegmentIndex = BoughtOrPaidValueBought;
                 self.boughtOrPaidSegmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
-//                CGRect frame = self.boughtOrPaidSegmentedControl.frame;
-//                frame.size.height = 30;
-//                self.boughtOrPaidSegmentedControl.frame = frame;
             }
             cell.accessoryView = self.boughtOrPaidSegmentedControl;
             cell.textLabel.text = NSLocalizedString(@"Action", nil);
         } else if (indexPath.row == EnterDataOtherFieldsAmountTextField) {
             if (!self.amountTextField) {
-                self.amountTextField = [[[UITextField alloc] initWithFrame:CGRectMake(0, 0, 60, 30)] autorelease];
+                self.amountTextField = [[[UITextField alloc] initWithFrame:CGRectMake(225, 12, 60, 30)] autorelease];
                 self.amountTextField.placeholder = NSLocalizedString(@"10.00", nil);
                 self.amountTextField.keyboardType = UIKeyboardTypeNumberPad;
                 self.amountTextField.delegate = self;
@@ -135,69 +131,15 @@
                 }
                 self.amountTextField.inputAccessoryView = self.keyboardToolbar;
             }
-            cell.accessoryView = self.amountTextField;
             cell.textLabel.text = [NSString stringWithFormat:@"%@ ($)", NSLocalizedString(@"Amount", nil), nil];
+            [cell.contentView addSubview:self.amountTextField];
         }
     } else if (indexPath.section == EnterDataSectionSubmit) {
-//        if (!self.submitButton) {
-//            self.submitButton = [[[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 31)] autorelease];
-//            self.submitButton.titleLabel.text = NSLocalizedString(@"Add Item", nil);
-//            [self.submitButton addTarget:self action:@selector(submitButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-//        }
-//        cell.accessoryView = self.submitButton;
         cell.textLabel.text = NSLocalizedString(@"Tap To Submit", nil);
         cell.textLabel.textAlignment = UITextAlignmentCenter;
         cell.selectionStyle = UITableViewCellSelectionStyleBlue;
     }
     return cell;
-}
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-#pragma mark - UITextFieldDelegate methods
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-    self.activeTextField = textField;
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-    self.activeTextField = nil;
 }
 
 - (NSString *)stringForSegment:(NSInteger)segment {
