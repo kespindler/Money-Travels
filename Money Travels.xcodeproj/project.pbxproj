@@ -18,10 +18,11 @@
 		458F268814C2B24D00E9315A /* bkg_airplane.png in Resources */ = {isa = PBXBuildFile; fileRef = 458F268614C2B24D00E9315A /* bkg_airplane.png */; };
 		458F268914C2B24D00E9315A /* bkg_airplane@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 458F268714C2B24D00E9315A /* bkg_airplane@2x.png */; };
 		458F269914C2C90400E9315A /* SettingsViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 458F269814C2C90400E9315A /* SettingsViewController2.m */; };
+		458F269B14C2EA4B00E9315A /* img_helpscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 458F269A14C2EA4B00E9315A /* img_helpscreen.png */; };
+		458F26A114C2F84900E9315A /* iPhoneIcon_Big.png in Resources */ = {isa = PBXBuildFile; fileRef = 458F26A014C2F84900E9315A /* iPhoneIcon_Big.png */; };
+		458F26A314C2F85F00E9315A /* iPhoneIcon_Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 458F26A214C2F85E00E9315A /* iPhoneIcon_Small.png */; };
 		45E7A0BE14C08CB7008985C5 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E7A0BC14C08CB7008985C5 /* HistoryViewController.m */; };
-		45E7A0BF14C08CB7008985C5 /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45E7A0BD14C08CB7008985C5 /* HistoryViewController.xib */; };
 		45E7A0C314C08CD2008985C5 /* TotalsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E7A0C114C08CD2008985C5 /* TotalsViewController.m */; };
-		45E7A0C414C08CD2008985C5 /* TotalsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45E7A0C214C08CD2008985C5 /* TotalsViewController.xib */; };
 		45E7A0C814C08CE1008985C5 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E7A0C614C08CE1008985C5 /* HelpViewController.m */; };
 		45E7A0C914C08CE1008985C5 /* HelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45E7A0C714C08CE1008985C5 /* HelpViewController.xib */; };
 		45E7A28014C0953D008985C5 /* icn_tabbaradd.png in Resources */ = {isa = PBXBuildFile; fileRef = 45E7A1B414C0953D008985C5 /* icn_tabbaradd.png */; };
@@ -31,7 +32,6 @@
 		45E7A28414C0953D008985C5 /* icn_tabbartotals.png in Resources */ = {isa = PBXBuildFile; fileRef = 45E7A1B814C0953D008985C5 /* icn_tabbartotals.png */; };
 		45E7A28714C09696008985C5 /* PersonObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E7A28614C09696008985C5 /* PersonObject.m */; };
 		45E7A28B14C09970008985C5 /* NewPersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E7A28914C0996F008985C5 /* NewPersonViewController.m */; };
-		45E7A28C14C09970008985C5 /* NewPersonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45E7A28A14C0996F008985C5 /* NewPersonViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,17 +49,17 @@
 		45804C9A14C07FAF005D911D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		458F268014C2996100E9315A /* EnterDataViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnterDataViewController2.h; sourceTree = "<group>"; };
 		458F268114C2996100E9315A /* EnterDataViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnterDataViewController2.m; sourceTree = "<group>"; };
-		458F268214C2996100E9315A /* EnterDataViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EnterDataViewController2.xib; sourceTree = "<group>"; };
 		458F268614C2B24D00E9315A /* bkg_airplane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bkg_airplane.png; sourceTree = "<group>"; };
 		458F268714C2B24D00E9315A /* bkg_airplane@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bkg_airplane@2x.png"; sourceTree = "<group>"; };
 		458F269714C2C90400E9315A /* SettingsViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController2.h; sourceTree = "<group>"; };
 		458F269814C2C90400E9315A /* SettingsViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController2.m; sourceTree = "<group>"; };
+		458F269A14C2EA4B00E9315A /* img_helpscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_helpscreen.png; sourceTree = "<group>"; };
+		458F26A014C2F84900E9315A /* iPhoneIcon_Big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhoneIcon_Big.png; sourceTree = "<group>"; };
+		458F26A214C2F85E00E9315A /* iPhoneIcon_Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhoneIcon_Small.png; sourceTree = "<group>"; };
 		45E7A0BB14C08CB7008985C5 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
 		45E7A0BC14C08CB7008985C5 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
-		45E7A0BD14C08CB7008985C5 /* HistoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
 		45E7A0C014C08CD2008985C5 /* TotalsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TotalsViewController.h; sourceTree = "<group>"; };
 		45E7A0C114C08CD2008985C5 /* TotalsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TotalsViewController.m; sourceTree = "<group>"; };
-		45E7A0C214C08CD2008985C5 /* TotalsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TotalsViewController.xib; sourceTree = "<group>"; };
 		45E7A0C514C08CE1008985C5 /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
 		45E7A0C614C08CE1008985C5 /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
 		45E7A0C714C08CE1008985C5 /* HelpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HelpViewController.xib; sourceTree = "<group>"; };
@@ -72,7 +72,6 @@
 		45E7A28614C09696008985C5 /* PersonObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonObject.m; sourceTree = "<group>"; };
 		45E7A28814C0996F008985C5 /* NewPersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPersonViewController.h; sourceTree = "<group>"; };
 		45E7A28914C0996F008985C5 /* NewPersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPersonViewController.m; sourceTree = "<group>"; };
-		45E7A28A14C0996F008985C5 /* NewPersonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewPersonViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +93,8 @@
 			children = (
 				45804C9014C07FAF005D911D /* Money Travels */,
 				45E7A0EA14C0953D008985C5 /* Resources */,
+				458F26A214C2F85E00E9315A /* iPhoneIcon_Small.png */,
+				458F26A014C2F84900E9315A /* iPhoneIcon_Big.png */,
 				45804C8914C07FAF005D911D /* Frameworks */,
 				45804C8714C07FAF005D911D /* Products */,
 			);
@@ -125,13 +126,10 @@
 				45804C9A14C07FAF005D911D /* AppDelegate.m */,
 				458F268014C2996100E9315A /* EnterDataViewController2.h */,
 				458F268114C2996100E9315A /* EnterDataViewController2.m */,
-				458F268214C2996100E9315A /* EnterDataViewController2.xib */,
 				45E7A0BB14C08CB7008985C5 /* HistoryViewController.h */,
 				45E7A0BC14C08CB7008985C5 /* HistoryViewController.m */,
-				45E7A0BD14C08CB7008985C5 /* HistoryViewController.xib */,
 				45E7A0C014C08CD2008985C5 /* TotalsViewController.h */,
 				45E7A0C114C08CD2008985C5 /* TotalsViewController.m */,
-				45E7A0C214C08CD2008985C5 /* TotalsViewController.xib */,
 				458F269714C2C90400E9315A /* SettingsViewController2.h */,
 				458F269814C2C90400E9315A /* SettingsViewController2.m */,
 				45E7A0C514C08CE1008985C5 /* HelpViewController.h */,
@@ -139,7 +137,6 @@
 				45E7A0C714C08CE1008985C5 /* HelpViewController.xib */,
 				45E7A28814C0996F008985C5 /* NewPersonViewController.h */,
 				45E7A28914C0996F008985C5 /* NewPersonViewController.m */,
-				45E7A28A14C0996F008985C5 /* NewPersonViewController.xib */,
 				45E7A28514C09695008985C5 /* PersonObject.h */,
 				45E7A28614C09696008985C5 /* PersonObject.m */,
 				456BD5A514C0AAE800E11001 /* PaymentObject.h */,
@@ -162,6 +159,7 @@
 		45E7A0EA14C0953D008985C5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				458F269A14C2EA4B00E9315A /* img_helpscreen.png */,
 				458F268614C2B24D00E9315A /* bkg_airplane.png */,
 				458F268714C2B24D00E9315A /* bkg_airplane@2x.png */,
 				45E7A1B414C0953D008985C5 /* icn_tabbaradd.png */,
@@ -226,17 +224,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				45804C9514C07FAF005D911D /* InfoPlist.strings in Resources */,
-				45E7A0BF14C08CB7008985C5 /* HistoryViewController.xib in Resources */,
-				45E7A0C414C08CD2008985C5 /* TotalsViewController.xib in Resources */,
 				45E7A0C914C08CE1008985C5 /* HelpViewController.xib in Resources */,
 				45E7A28014C0953D008985C5 /* icn_tabbaradd.png in Resources */,
 				45E7A28114C0953D008985C5 /* icn_tabbarhelp.png in Resources */,
 				45E7A28214C0953D008985C5 /* icn_tabbarhistory.png in Resources */,
 				45E7A28314C0953D008985C5 /* icn_tabbarsettings.png in Resources */,
 				45E7A28414C0953D008985C5 /* icn_tabbartotals.png in Resources */,
-				45E7A28C14C09970008985C5 /* NewPersonViewController.xib in Resources */,
 				458F268814C2B24D00E9315A /* bkg_airplane.png in Resources */,
 				458F268914C2B24D00E9315A /* bkg_airplane@2x.png in Resources */,
+				458F269B14C2EA4B00E9315A /* img_helpscreen.png in Resources */,
+				458F26A114C2F84900E9315A /* iPhoneIcon_Big.png in Resources */,
+				458F26A314C2F85F00E9315A /* iPhoneIcon_Small.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

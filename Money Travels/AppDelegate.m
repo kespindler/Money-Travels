@@ -21,15 +21,15 @@
 
 @synthesize window = _window;
 @synthesize tabBarController;
-@synthesize people;
-@synthesize history;
+@synthesize people = _people;
+@synthesize history = _history;
 
 - (void)dealloc
 {
     [_window release];
     [tabBarController release];
-    [people release];
-    [history release];
+    [_people release];
+    [_history release];
     [super dealloc];
 }
 
@@ -105,6 +105,8 @@
     [viewControllers addObject:nc];
     
     TotalsViewController *tvc = [[[TotalsViewController alloc] init] autorelease];
+    tvc.people = self.people;
+    tvc.history = self.history;
     nc = [[[UINavigationController alloc] initWithRootViewController:tvc] autorelease];
     [viewControllers addObject:nc];
     
@@ -118,9 +120,12 @@
     nc = [[[UINavigationController alloc] initWithRootViewController:helpvc] autorelease];
     [viewControllers addObject:nc];
     
-;
     [self.tabBarController setViewControllers:viewControllers];
-    [self.tabBarController setSelectedIndex:4];
+    
+    BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:[self storageFilePath]];
+    if (!fileExists) {
+        [self.tabBarController setSelectedIndex:4];
+    }
     [self.window setRootViewController:self.tabBarController];
     [self.window makeKeyAndVisible];
     return YES;

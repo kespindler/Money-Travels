@@ -7,6 +7,7 @@
 //
 
 #import "HelpViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation HelpViewController
 
@@ -32,6 +33,14 @@
 
 - (void)viewDidLoad
 {
+    for (UIView *s in self.view.subviews) {
+        if ([s isKindOfClass:UILabel.class]) {
+            s.layer.cornerRadius = 3.0f;
+            s.layer.shadowOpacity = 0.6f;
+            s.layer.shadowRadius = 3.0f;
+            s.layer.shadowColor = [UIColor lightGrayColor].CGColor;
+        }
+    }
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }

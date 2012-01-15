@@ -7,8 +7,12 @@
 //
 
 #import "TotalsViewController.h"
-
+#import "PersonObject.h"
+#import "PaymentObject.h"
 @implementation TotalsViewController
+
+@synthesize people = _people;
+@synthesize history = _history;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -20,8 +24,11 @@
     return self;
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (id)init {
+    return [self initWithStyle:UITableViewStyleGrouped];
+}
+
+- (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
     
@@ -33,7 +40,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    self.clearsSelectionOnViewWillAppear = NO;
+    UIImageView *backgroundView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bkg_airplane.png"]] autorelease];
+    backgroundView.contentMode = UIViewContentModeTop;
+    self.tableView.backgroundView = backgroundView;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -48,9 +58,9 @@
     // e.g. self.myOutlet = nil;
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self.tableView reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -74,33 +84,38 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-#pragma mark - Table view data source
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView { return TotalsSectionsNumSections; }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    NSInteger rows = 0;
+    if (section == TotalsSectionsPeople) rows = self.people.count;
+    return rows;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    if (!cell) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
     }
-    
-    // Configure the cell...
-    
+    NSInteger section = indexPath.section;
+    if (section == TotalsSectionsPeople) {
+        CGFloat total = 0.0f;
+        PersonObject *person = [self.people objectAtIndex:indexPath.row];
+        for (PaymentObject *payment in self.history) {
+            if (payment.personId == person.personId) {
+                total += payment.amount;
+            }
+        }
+        cell.textLabel.text = person.name;
+        if (total < 0) {
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"($%.2f)", -1 * total];
+            cell.detailTextLabel.textColor = [UIColor redColor];
+        } else {
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"$%.2f", total];
+            cell.detailTextLabel.textColor = [UIColor blackColor];
+        }
+    }
     return cell;
 }
 
