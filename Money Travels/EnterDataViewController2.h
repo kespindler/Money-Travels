@@ -13,7 +13,7 @@ enum {
     EnterDataSectionOtherFields,
     EnterDataSectionSubmit,
     EnterDataSectionNumSections, 
-    };
+};
 
 enum {
     EnterDataOtherFieldsBoughtOrPaidSegmentedControl,

@@ -20,8 +20,7 @@
 @synthesize keyboardToolbar = _keyboardToolbar;
 @synthesize selectedPerson = _selectedPerson;
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
+- (id)initWithStyle:(UITableViewStyle)style {
     self = [super initWithStyle:style];
     if (self) {
         self.title = NSLocalizedString(@"Add Payment", @"viewcontroller title");
@@ -58,6 +57,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    //addresses issue where selected person could be deleted when we're not on this screen
     if (![self.people containsObject:self.selectedPerson]) {
         self.selectedPerson = nil;
     }
