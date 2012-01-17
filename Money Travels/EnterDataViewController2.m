@@ -85,20 +85,18 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (!cell) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-    }
-    cell.textLabel.textColor = [UIColor blackColor];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.textLabel.textAlignment = UITextAlignmentLeft;
-    cell.accessoryType = UITableViewCellAccessoryNone;
+    UITableViewCell *cell = nil;
     if (indexPath.section == EnterDataSectionPeople) {
+        NSString *CellIdentifier = @"PeopleCell";
+        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (!cell) {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        }
+        cell.textLabel.textColor = [UIColor blackColor];
+        cell.accessoryType = UITableViewCellAccessoryNone;
         if (self.people.count) {
             PersonObject *person = [self.people objectAtIndex:indexPath.row];
             cell.textLabel.text = person.name;
-            cell.selectionStyle = UITableViewCellSelectionStyleBlue;
             if (person == self.selectedPerson) {
                 cell.accessoryType = UITableViewCellAccessoryCheckmark;
             }
@@ -108,6 +106,11 @@
         }
     } else if (indexPath.section == EnterDataSectionOtherFields) {
         if (indexPath.row == EnterDataOtherFieldsBoughtOrPaidSegmentedControl) {
+            NSString *CellIdentifier = @"SegmentControlCell";
+            cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            if (!cell) {
+                cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+            }
             if (!self.boughtOrPaidSegmentedControl) {
                 NSArray *segmentItems = [NSArray arrayWithObjects:
                                          [[self stringForSegment:0] capitalizedString],
@@ -119,6 +122,11 @@
             cell.accessoryView = self.boughtOrPaidSegmentedControl;
             cell.textLabel.text = NSLocalizedString(@"Action", nil);
         } else if (indexPath.row == EnterDataOtherFieldsAmountTextField) {
+            NSString *CellIdentifier = @"AmountFieldCell";
+            cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            if (!cell) {
+                cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+            }
             if (!self.amountTextField) {
                 self.amountTextField = [[[UITextField alloc] initWithFrame:CGRectMake(225, 12, 60, 30)] autorelease];
                 self.amountTextField.placeholder = NSLocalizedString(@"10.00", nil);
@@ -135,9 +143,13 @@
             [cell.contentView addSubview:self.amountTextField];
         }
     } else if (indexPath.section == EnterDataSectionSubmit) {
-        cell.textLabel.text = NSLocalizedString(@"Tap To Submit", nil);
-        cell.textLabel.textAlignment = UITextAlignmentCenter;
-        cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+        NSString *CellIdentifier = @"SubmitButtonCell";
+        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (!cell) {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+            cell.textLabel.textAlignment = UITextAlignmentCenter;
+            cell.textLabel.text = NSLocalizedString(@"Tap To Submit", nil);
+        }
     }
     return cell;
 }
